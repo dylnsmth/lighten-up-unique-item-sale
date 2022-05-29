@@ -1,0 +1,126 @@
+body {
+  font-family: helvetica;
+}
+
+/* NAVBARS */
+
+.upper-nav {
+  height: 100px;
+  background-color: rgb(11, 80, 145);
+  color: white;
+  font-family: georgia;
+}
+
+.carl-logo {
+  margin-left: 14px;
+  margin-top: 5px;
+  margin-right: 6px;
+  height: 90px;
+}
+
+.site-title {
+  font-size: 40px;
+}
+
+.site-subtitle {
+  font-size: 20px;
+  position: absolute;
+  top: 58px;
+}
+
+.lower-navbar {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  background-color: rgb(45, 83, 143);
+  color: white;
+}
+
+/* FAKE BOOTSTRAP */
+
+.btn-yellow  {
+  border: 1px solid black;
+  /* background-color: rgb(255, 210, 79); */
+  background-color: rgb(255, 255, 255);
+}
+
+.btn-yellow:hover, .btn-yellow:active, .btn-yellow:focus {
+  background-color: rgb(255, 239, 200);
+}
+
+.btn-blue, .btn-blue:focus  {
+  border: 1px solid black;
+  color: white;
+  background-color: rgb(11, 80, 145);
+}
+
+.btn-blue:hover {
+  border: 1px solid black;
+  background-color: rgb(0, 62, 126);
+  /* background-color: rgb(0, 31, 63); */
+  color: white;
+}
+
+/* TITLE, DESCRIPTION, PRICE */
+
+.title-input, .description-input, .currencyinput {
+  position: relative;
+  left: 10px;
+  width: 95%;
+}
+
+/* IMAGES */
+
+.select-photo {
+  text-align: left;
+  position: relative;
+  top: 5px;
+  width: auto;
+}
+
+.central-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  border: 3px solid black;
+  padding: 5px;
+  margin: 5px;
+  vertical-align: center;
+  text-align: center;
+}
+
+.bottom-image {
+  width: 75px;
+  height: 75px;
+  border-radius: 15px;
+  border: 3px solid black;
+  padding: 5px;
+  margin: 5px;
+}
+
+.no-image-found {
+
+}
+
+/* PRICE */
+
+.currencyinput {
+  width: auto;
+  border: 1px inset #ccc;
+}
+.currencyinput input {
+  border: 0;
+}
+
+/* PUBLISH */
+
+.section-publish {
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+.publish-button {
+  width: 120px;
+}
