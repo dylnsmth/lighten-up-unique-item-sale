@@ -1,0 +1,17 @@
+{
+  "name": "Lighten Up Unique Item Sale",
+  "version": "1.0.0",
+  "description": "Selling unique items",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Dylan Smith",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^16.0.8"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
