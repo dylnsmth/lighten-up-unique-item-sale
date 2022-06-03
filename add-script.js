@@ -40,11 +40,13 @@ $(document).ready(function(){
       removeItemWithTitle($(".title-input").val());
       if (checkFormCompletion()) {
           saveItemToJSON();
+          fs.writeFileSync("item-under-edit.json", JSON.stringify([]));
           window.location.href = "./admin.html";
       }
   });
   $(".exit-add-item").click(function() {
     if (confirm("By exiting this page, you may lose the information you have already inputted.")) {
+      fs.writeFileSync("item-under-edit.json", JSON.stringify([]));
       window.location.href = "./admin.html";
     }
   });
