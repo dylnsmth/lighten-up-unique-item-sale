@@ -30,7 +30,6 @@ function addItemToPage(item) {
     }
   });
   $(".item-edit-" + item.id).click(function() {
-    permanentlyDeleteItem(item);
     fs.writeFileSync("item-under-edit.json", JSON.stringify(item));
     window.location.href = "./add-item.html";
 

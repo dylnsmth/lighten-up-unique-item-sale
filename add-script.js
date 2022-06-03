@@ -37,6 +37,7 @@ $(document).ready(function(){
     }
   });
   $(".publish-button").click(function() {
+      removeItemWithTitle($(".title-input").val());
       if (checkFormCompletion()) {
           saveItemToJSON();
           window.location.href = "./admin.html";
@@ -125,6 +126,14 @@ function saveItemToJSON() {
     };
     items.push(new_item);
     fs.writeFileSync("items.json", JSON.stringify(items));
+}
+
+function removeItemWithTitle(title) {
+  for (let i in items) {
+    if (items[i].title == title) {
+      items.splice(i, 1);
+    }
+  }
 }
 
 function checkFormCompletion() {
