@@ -60,7 +60,6 @@ function addNewImage(src) { //TO DO: add title before picture
   displayImages();
   let base64Data = convertImageToBase64(src);
   fs.writeFileSync(filePath, base64Data, 'base64');
-  fs.writeFileSync("output.txt", JSON.stringify(imagePaths))
 }
 
 function convertImageToBase64(image) {
@@ -217,6 +216,5 @@ function setInitialValuesForForm() {
     } else {
       imagenumbers = item_under_edit.imagenumbers; 
     }
-    fs.writeFileSync("output.txt", typeof(item_under_edit.imagenumbers))
     displayImages();
   }

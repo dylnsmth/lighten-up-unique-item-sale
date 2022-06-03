@@ -1,1 +1,1 @@
-["./items/Prada (0).png","./items/Prada (1).png"]
+number
