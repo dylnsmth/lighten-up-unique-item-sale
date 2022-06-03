@@ -2,6 +2,7 @@ window.$ = window.jQuery = require("jquery");
 
 const fs = require("fs");
 let items = [];
+let selected_categories = [];
 
 let Item = class {
   constructor(title, description, price, categories, images) {
@@ -16,7 +17,7 @@ let Item = class {
 
 function addItemToPage(item) {
   $(".items-display").append(
-    `<div class="item-cell" id="` + item.id + `">
+    `<div class="item-cell cell-` + item.categories[0] + `" id="` + item.id + `">
       <img class="item-cell-img" src="` + item.images[0] + `" />
       <h4 class="item-cell-title">` + item.title + `</h4>
       <i class="admin-trash-icon item-delete-` + item.id + ` fa fa-trash-o"></i>
@@ -54,6 +55,17 @@ function createItemListFromJSON() {
   return items;
 }
 
+function filterByCategories() {
+  if (selected_categories.length > 0) {
+    $(".item-cell").hide();
+    for (let cat_index in selected_categories) {
+      $(".cell-" + selected_categories[cat_index]).show();
+    }
+  } else {
+    $(".item-cell").show();
+  }
+}
+
 $(document).ready(function() {
   if (!fs.existsSync("items.json")) {
     fs.writeFileSync("items.json", JSON.stringify([]));
@@ -65,6 +77,17 @@ $(document).ready(function() {
 
   $("#add-item").click(function () {
     window.location.href = "./add-item.html";
+  });
+
+  $(".category-checkbox").change(function() {
+    let cat = $(this).val()
+    let cat_index = selected_categories.indexOf(cat);
+    if (cat_index < 0) {
+      selected_categories.push(cat);
+    } else {
+      selected_categories.splice(cat_index, 1);
+    }
+    filterByCategories();
   });
 
 });
