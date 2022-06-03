@@ -70,6 +70,7 @@ body {
 }
 
 .central-image {
+  object-fit: contain;
   width: 250px;
   height: 250px;
   border-radius: 20px;
@@ -81,6 +82,7 @@ body {
 }
 
 .bottom-image {
+  object-fit: contain;
   width: 75px;
   height: 75px;
   border-radius: 15px;
