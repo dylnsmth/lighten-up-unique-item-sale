@@ -17,11 +17,15 @@ let Item = class {
 
 function addItemToPage(item) {
   $(".items-display").append(
-    `<div class="item-cell" id="` + item.id + `">
-      <img class="item-cell-img" src="` + item.images[0] + `" />
-      <h4 class="item-cell-title">` + item.title + `</h4>
-      <i class="admin-trash-icon item-delete-` + item.id + ` fa fa-trash-o"></i>
-      <i class="admin-edit-icon item-edit-` + item.id + ` fa fa-edit"></i>
+    `<div class="item-cell vertical-container" id="` + item.id + `">
+      <div class="horizontal-container">    
+        <img class="item-cell-img" src="` + item.images[0] + `" />
+        <i class="admin-trash-icon item-delete-` + item.id + ` fa fa-trash-o"></i>
+      </div >
+      <div class="horizontal-container name-edit-box">
+        <h4 class="item-cell-title">` + item.title + `</h4>
+        <i class="admin-edit-icon item-edit-` + item.id + ` fa fa-edit"></i>
+      </div>
     </div>`
   );
   $(".item-delete-" + item.id).click(function() {
