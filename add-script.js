@@ -136,8 +136,8 @@ function checkFormCompletion() {
       alert("Another item already has this title. Please enter a unique item title.");
     } else if (!existsPrice()) {
       alert("Give the item a price before publishing!");
-    // } else if (!categorySelected) {
-    //   alert("Give the item a category before publishing!");
+    } else if (!existsCategory()) {
+      alert("Give the item a category before publishing!");
     } else if (!existsImage()) {
       alert("Give the item an image before publishing!");
     } else {
@@ -158,7 +158,13 @@ function existsPrice() {
 function existsImage() {
     return (imagePaths.length > 0);
 }
-  
+ 
+function existsCategory() {
+  if ($("#categoryDropdown").text() == "\n              Select a category\n            "){
+    return false;
+  }
+  return true;
+}
 // If no description is added, sets a default description
 function setDefaultDescription() {
     if ($(".description-input").val() == "") {
