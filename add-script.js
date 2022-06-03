@@ -4,6 +4,7 @@ const { isUndefined } = require("util");
 
 let imagePaths = [];
 let image_numbers = 0;
+let oldTitle;
 
 if (!fs.existsSync("items.json")) {
     fs.writeFileSync("items.json", JSON.stringify([]));
@@ -37,7 +38,7 @@ $(document).ready(function(){
     }
   });
   $(".publish-button").click(function() {
-      removeItemWithTitle($(".title-input").val());
+      removeItemWithTitle(oldTitle);
       if (checkFormCompletion()) {
           saveItemToJSON();
           fs.writeFileSync("item-under-edit.json", JSON.stringify([]));
@@ -200,8 +201,9 @@ function isTitleUnique() {
 }
 
 function setInitialValuesForForm() {
-    $(".title-input").val(item_under_edit.title)
-    $(".description-input").val(item_under_edit.description)
+    $(".title-input").val(item_under_edit.title);
+    oldTitle = item_under_edit.title;
+    $(".description-input").val(item_under_edit.description);
     $("#categoryDropdown").text(item_under_edit.categories);
     $(".price-input").val(item_under_edit.price)
     if (item_under_edit.images === undefined) {
