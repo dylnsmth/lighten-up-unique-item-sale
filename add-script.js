@@ -182,6 +182,9 @@ function isTitleUnique() {
 }
 
 function saveImages() {
+  if(!fs.existsSync("items")) {
+    fs.mkdirSync("items");
+  }
   for (let i in images) {
     let base64Data = cleanImageData(images[i]);
     let fileTitle = $(".title-input").val() + " (" + i + ").png";
