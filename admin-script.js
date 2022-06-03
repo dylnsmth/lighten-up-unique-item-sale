@@ -4,13 +4,13 @@ const fs = require("fs");
 let items = [];
 
 let Item = class {
-  constructor(title, description, price, categories, images, image_numbers) {
+  constructor(title, description, price, categories, images, imagenumbers) {
     this.title = title;
     this.description = description;
     this.price = price;
     this.categories = categories;
     this.images = images;
-    this.image_numbers = image_numbers;
+    this.imagenumbers = imagenumbers;
     this.id = title.replace(/\s/g, '-');
   }
 }
@@ -51,7 +51,7 @@ function permanentlyDeleteItem(item) {
 }
 
 function createItemFromJSON(json) {
-  let item = new Item(json["title"], json["description"], json["price"], json["categories"], json["images"]);
+  let item = new Item(json["title"], json["description"], json["price"], json["categories"], json["images"], json["imagenumbers"]);
   return item;
 }
 

@@ -3,7 +3,7 @@ const fs = require("fs");
 const { isUndefined } = require("util");
 
 let imagePaths = [];
-let image_numbers = 0;
+let imagenumbers = 0;
 let oldTitle;
 
 if (!fs.existsSync("items.json")) {
@@ -54,12 +54,13 @@ $(document).ready(function(){
 });
 
 function addNewImage(src) { //TO DO: add title before picture
-  let filePath = "./items/" + $(".title-input").val() + " (" + image_numbers + ").png";
-  image_numbers++;
+  let filePath = "./items/" + $(".title-input").val() + " (" + imagenumbers + ").png";
+  imagenumbers++;
   imagePaths.push(filePath);
   displayImages();
   let base64Data = convertImageToBase64(src);
   fs.writeFileSync(filePath, base64Data, 'base64');
+  fs.writeFileSync("output.txt", JSON.stringify(imagePaths))
 }
 
 function convertImageToBase64(image) {
@@ -125,7 +126,7 @@ function saveItemToJSON() {
       "price": $(".price-input").val(),
       "categories": [$("#categoryDropdown").text()],
       "images": imagePaths,
-      "image_numbers": image_numbers
+      "imagenumbers": imagenumbers
     };
     items.push(new_item);
     fs.writeFileSync("items.json", JSON.stringify(items));
@@ -211,10 +212,11 @@ function setInitialValuesForForm() {
     } else {
         imagePaths = item_under_edit.images;
     }
-    if (!image_numbers) {
-      image_numbers = 0;
+    if (!item_under_edit.imagenumbers) {
+      imagenumbers = 0;
     } else {
-      image_numbers = item_under_edit.image_numbers; 
+      imagenumbers = item_under_edit.imagenumbers; 
     }
+    fs.writeFileSync("output.txt", typeof(item_under_edit.imagenumbers))
     displayImages();
   }
