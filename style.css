@@ -159,6 +159,12 @@ body {
   right: 6px;
 }
 
+.admin-edit-icon {
+  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  right: 6px;
+}
 /* BTN COLOR SCHEMES */
 
 .btn-yellow  {
