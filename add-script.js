@@ -69,7 +69,7 @@ function displayImages() {
         if (i == 0) {
         createCentralImage(imagePaths[i]);
         }  else {
-        createBottomImage(imagePaths[i]);
+        createBottomImage(i, imagePaths[i]);
         }
     }
     if (imagePaths.length == 0) {
@@ -93,10 +93,20 @@ function createCentralImage(image) {
     })
 }
 
-function createBottomImage(image) {
+function createBottomImage(location, imagePath) {
   $(".bottom-images").append(
-    `<img class="bottom-image " src="` + image + `"/>`
+    `<img class="bottom-image bottom-image-` + location +  ` " src="` + imagePath + `"/>`
   );
+  $(".bottom-image-" + location).click(function() {
+    swapBottomImage(location);
+  });
+}
+
+function swapBottomImage(location) {
+  let temp = imagePaths[0];
+  imagePaths[0] = imagePaths[location];
+  imagePaths[location] = temp;
+  displayImages();
 }
 
 function deleteCentralImage() {
@@ -182,6 +192,10 @@ function setInitialValuesForForm() {
     } else {
         imagePaths = item_under_edit.images;
     }
-    image_numbers = item_under_edit.image_numbers; 
+    if (!image_numbers) {
+      image_numbers = 0;
+    } else {
+      image_numbers = item_under_edit.image_numbers; 
+    }
     displayImages();
   }
