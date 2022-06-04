@@ -16,13 +16,53 @@
     <nav class="upper-nav">
       <img class="carl-logo" src="./assets/carleton logo.png" />
       <span class="site-subtitle">Admin Site</span>
-      <span class="site-title">Lighten Up Online Thrift Store</span>
+      <span class="site-title">Lighten Up Thrift Sale</span>
     </nav>
-    <button id="add-item" class="btn btn-yellow">
-      <i style="font-size: 40px;" class="fa fa-plus"></i><br>
-      Add Item
-    </button>
-    <div class="items-display">
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+        <nav id="sidebar">
+          <ul class="list-unstyled components">
+              <p class="admin-sidebar-heading">Categories</p>
+              <hr>
+              <li name="Clothing">
+                <input class="category-checkbox" type="checkbox" id="checkboxClothing" name="checkboxClothing" value="Clothing">
+                <label for="checkboxClothing"> Clothing</label><br>
+              </li>
+              <li name="Shoes">
+                <input class="category-checkbox" type="checkbox" id="checkboxShoes" name="checkboxShoes" value="Shoes">
+                <label for="checkboxShoes"> Shoes</label><br>
+              </li>
+              <li name="Jewellery">
+                <input class="category-checkbox" type="checkbox" id="checkboxJewellery" name="checkboxJewellery" value="Jewellery">
+                <label for="checkboxJewellery"> Jewellery</label><br>
+              </li>
+              <li name="Accessories">
+                <input class="category-checkbox" type="checkbox" id="checkboxAccessories" name="checkboxAccessories" value="Accessories">
+                <label for="checkboxAccessories"> Accessories</label><br>
+              </li>
+              <li name="Electronics">
+                <input class="category-checkbox" type="checkbox" id="checkboxElectronics" name="checkboxElectronics" value="Electronics">
+                <label for="checkboxElectronics"> Electronics</label><br>
+              </li>
+              <li name="Other">
+                <input class="category-checkbox" type="checkbox" id="checkboxOther" name="checkboxOther" value="Other">
+                <label for="checkboxOther"> Other</label><br>
+              </li>
+          </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+          <button id="add-item" class="btn btn-yellow">
+            <i style="font-size: 40px;" class="fa fa-plus"></i><br>
+            Add Item
+          </button>
+          <div class="items-display">
+
+          </div>
+
+        </div>
 
     </div>
     <!-- Bootstrap -->
