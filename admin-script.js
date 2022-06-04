@@ -25,7 +25,7 @@ function addItemToPage(item) {
       </div >
       <div class="horizontal-container name-edit-box">
         <h4 class="item-cell-title">` + item.title + `</h4>
-        <i class="admin-edit-icon item-edit-` + item.id + ` fa fa-edit"></i>
+        <button class="admin-edit-icon item-edit-` + item.id + ` btn-green">edit</button>
       </div>
     </div>`
   );

@@ -164,9 +164,8 @@ body {
 }
 
 .admin-edit-icon {
-  font-size: 20px;
-  top: 30px;
-  right: 6px;
+  font-size: 15px;
+  border-radius: 15px; 
 }
 
 /* SIDEBAR */
