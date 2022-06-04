@@ -140,6 +140,8 @@ body {
   margin: 10px;
   display: inline-block;
   padding: 5px;
+  border: 2px solid rgb(11, 80, 145);
+  border-radius: 10px;
 }
 
 .item-cell-img {
@@ -239,6 +241,16 @@ body {
 .btn-red:hover, .btn-red:focus, .btn-red:active {
   color: white;
   background: #ad6868;
+}
+
+.btn-green {
+  color: white;
+  background: #588745;
+}
+
+.btn-green:hover, .btn-green:focus, .btn-green:active {
+  color: white;
+  background: #acc3a2;
 }
 
 .item-cell-img{
