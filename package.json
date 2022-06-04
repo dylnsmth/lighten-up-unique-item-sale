@@ -9,7 +9,7 @@
   "author": "Dylan Smith",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^16.0.8"
+    "electron": "^16.2.8"
   },
   "dependencies": {
     "jquery": "^3.6.0"
