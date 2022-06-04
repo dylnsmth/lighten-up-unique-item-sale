@@ -32,7 +32,7 @@ function createWindow () {
     }
   })
 
-  win.loadFile('add-item.html')
+  win.loadFile('admin.html')
 }
 
 app.whenReady().then(() => {
