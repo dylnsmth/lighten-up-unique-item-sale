@@ -248,6 +248,7 @@ body {
 
 .items-display{
   display: flex;
+  flex-wrap: wrap;
 }
 
 .item-cell-title{
