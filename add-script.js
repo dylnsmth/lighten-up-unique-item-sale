@@ -4,6 +4,7 @@ const { isUndefined } = require("util");
 
 let imagePaths = [];
 let imagenumbers = 0;
+let editing = true;
 let oldTitle;
 
 if (!fs.existsSync("items.json")) {
@@ -18,6 +19,9 @@ if (!fs.existsSync("items")) {
 
 let items = JSON.parse(fs.readFileSync("items.json"));
 let item_under_edit = JSON.parse(fs.readFileSync("item-under-edit.json"));
+if (item_under_edit.length == 0) {
+  editing = false;
+}
 
 $(document).ready(function(){
   setInitialValuesForForm()
@@ -158,19 +162,19 @@ function checkFormCompletion() {
     }
     return false;
 }
-  
+
 function existsTitle() {
     return ($(".title-input").val() != "");
 }
-  
+
 function existsPrice() {
     return ($(".price-input").val() != "");
 }
-  
+
 function existsImage() {
     return (imagePaths.length > 0);
 }
- 
+
 function existsCategory() {
   if ($("#categoryDropdown").text() == "\n              Select a category\n            "){
     return false;
@@ -183,7 +187,7 @@ function setDefaultDescription() {
         $(".description-input").val("This item has no description.");
     }
 }
-  
+
   // Shouldn't be necessary, but I wrote my code really quickly so it isn't secure enough
   // To handle certain characters
 function isTitleValid() {
@@ -191,7 +195,7 @@ function isTitleValid() {
     let valid_chars = /^[a-zA-Z0-9_,. -]*$/;
     return valid_chars.test(title);
 }
-  
+
 function isTitleUnique() {
     for (let item_index in items) {
         let item = items[item_index];
@@ -201,6 +205,7 @@ function isTitleUnique() {
 }
 
 function setInitialValuesForForm() {
+  if (editing) {
     $(".title-input").val(item_under_edit.title);
     oldTitle = item_under_edit.title;
     $(".description-input").val(item_under_edit.description);
@@ -214,7 +219,10 @@ function setInitialValuesForForm() {
     if (!item_under_edit.imagenumbers) {
       imagenumbers = 0;
     } else {
-      imagenumbers = item_under_edit.imagenumbers; 
+      imagenumbers = item_under_edit.imagenumbers;
     }
     displayImages();
+    $(".publish-button").text("Save");
+    $(".add-item-title").text("Edit Item");
   }
+}
