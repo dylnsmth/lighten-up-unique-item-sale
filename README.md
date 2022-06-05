@@ -12,7 +12,7 @@ Developed on Jun 4, 2022 by
 # Installation steps
 
 ## 1. Download the code
-At https://github.com/dylnsmth/lighten-up-unique-item-sale, click on the **Code** button and selected **Download ZIP```. Then, open the .zip file to get the app's contents.
+At https://github.com/dylnsmth/lighten-up-unique-item-sale, click on the **Code** button and selected **Download ZIP**. Then, open the .zip file to get the app's contents.
 
 ## 2. Download node.js and install 
 Go to this link https://nodejs.org/en/download/, and follow the steps.
