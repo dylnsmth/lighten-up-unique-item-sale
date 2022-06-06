@@ -12,7 +12,7 @@ Developed on Jun 4, 2022 by
 # Installation steps
 
 ## 1. Download the code
-This skip should be skipped unless you don't already have the code. The GitHub repository lacks preset items already inputed into the system.
+This part should be skipped unless you don't already have the code. The GitHub repository lacks preset items already inputed into the system.
 
 At https://github.com/dylnsmth/lighten-up-unique-item-sale, click on the **Code** button and selected **Download ZIP**. Then, open the .zip file to get the app's contents.
 
