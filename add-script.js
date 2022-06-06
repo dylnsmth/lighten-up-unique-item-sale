@@ -147,7 +147,7 @@ function checkFormCompletion() {
     if (!existsTitle()) {
       alert("Give the item a title before publishing!");
     } else if (!isTitleValid()) {
-      alert("The current system does not allow special characters in titles. Please only use letters, numbers, underscores, dashes, periods, commas, and spaces.")
+      alert("The current system does not allow special characters in titles. Please only use letters, numbers, underscores, and spaces.")
     } else if (!isTitleUnique()) {
       alert("Another item already has this title. Please enter a unique item title.");
     } else if (!existsPrice()) {
@@ -192,7 +192,7 @@ function setDefaultDescription() {
   // To handle certain characters
 function isTitleValid() {
     let title = $(".title-input").val();
-    let valid_chars = /^[a-zA-Z0-9_,. -]*$/;
+    let valid_chars = /^[a-zA-Z0-9_ ]*$/;
     return valid_chars.test(title);
 }
 
