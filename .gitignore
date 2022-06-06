@@ -4,3 +4,4 @@ package-lock.json
 items/*
 items.json
 item-under-edit.json
+output.txt
